@@ -6,7 +6,11 @@ import json
 
 import settings
 
-(value, from_curr, to, to_curr) = alfred.args() # proper decoding and unescaping of command line arguments
+try:
+    (value, from_curr, to, to_curr) = alfred.args() # proper decoding and unescaping of command line arguments
+except ValueError:
+    alfred.write(alfred.xml([alfred.Item(attributes= {'uid': alfred.uid(0)}, title="<amount> <currency> in <other currency>", subtitle="i.e. 123 EUR in USD")]))
+    exit()
 
 from_curr = from_curr.upper()
 to_curr = to_curr.upper()
