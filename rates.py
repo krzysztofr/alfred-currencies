@@ -7,9 +7,9 @@ import json
 import settings
 
 try:
-    (value, from_curr, to, to_curr) = alfred.args() # proper decoding and unescaping of command line arguments
+    (value, from_curr, to, to_curr) = alfred.args()  # proper decoding and unescaping of command line arguments
 except ValueError:
-    alfred.write(alfred.xml([alfred.Item(attributes= {'uid': alfred.uid(0)}, title="<amount> <currency> in <other currency>", subtitle="i.e. 123 EUR in USD")]))
+    alfred.write(alfred.xml([alfred.Item(attributes={'uid': alfred.uid(0)}, title="<amount> <currency> in <other currency>", subtitle="i.e. 123 EUR in USD")]))
     exit()
 
 from_curr = from_curr.upper()
@@ -32,9 +32,9 @@ from_string = u"%.2f %s" % (value, from_curr)
 to_string = u"%.2f %s" % (result, to_curr)
 
 results = [alfred.Item(
-    attributes= {'uid': alfred.uid(0)},
+    attributes={'uid': alfred.uid(0)},
     title=to_string,
     subtitle=from_string
-)] # a single Alfred result
-xml = alfred.xml(results) # compiles the XML answer
-alfred.write(xml) # writes the XML back to Alfred
+)]  # a single Alfred result
+xml = alfred.xml(results)  # compiles the XML answer
+alfred.write(xml)  # writes the XML back to Alfred
