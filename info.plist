@@ -32,6 +32,10 @@
 				<string>rate</string>
 				<key>script</key>
 				<string>python rates.py {query}</string>
+				<key>subtext</key>
+				<string>Write in format: 123 USD in EUR</string>
+				<key>title</key>
+				<string>Currency rates</string>
 				<key>type</key>
 				<integer>0</integer>
 				<key>withspace</key>
