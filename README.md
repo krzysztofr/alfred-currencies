@@ -3,7 +3,7 @@ alfred-currencies
 
 Currency exchange rates workflow for [Alfred 2](http://www.alfredapp.com/).
 
-
+![screenshot](doc/screenshot.png)
 
 ## How to install
 
