@@ -3,6 +3,8 @@ alfred-currencies
 
 Currency exchange rates workflow for [Alfred 2](http://www.alfredapp.com/).
 
+
+
 ## How to install
 
 Download the `Exchange Rates.alfredworkflow` file and import it into Alfred.
