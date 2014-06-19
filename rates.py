@@ -4,7 +4,11 @@ import alfred
 import urllib2
 import json
 
-import settings
+
+try:
+    import settings
+except ImportError:
+    alfred.write(alfred.xml([alfred.Item(attributes={'uid': alfred.uid(0)}, title="no settings.py file found", subtitle="Did you follow the installation instructions?")]))
 
 
 def prompt():
