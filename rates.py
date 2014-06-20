@@ -5,14 +5,13 @@ import urllib2
 import json
 
 
+def prompt(title="<amount> <currency> in <other currency>", subtitle="i.e. 123 EUR in USD"):
+    alfred.write(alfred.xml([alfred.Item(attributes={'uid': alfred.uid(0)}, title=title, subtitle=subtitle)]))
+
 try:
     import settings
 except ImportError:
-    alfred.write(alfred.xml([alfred.Item(attributes={'uid': alfred.uid(0)}, title="no settings.py file found", subtitle="Did you follow the installation instructions?")]))
-
-
-def prompt():
-    alfred.write(alfred.xml([alfred.Item(attributes={'uid': alfred.uid(0)}, title="<amount> <currency> in <other currency>", subtitle="i.e. 123 EUR in USD")]))
+    prompt(title="no settings.py file found", subtitle="Did you follow the installation instructions?")
 
 try:
     (value, from_curr, to, to_curr) = alfred.args()  # proper decoding and unescaping of command line arguments
@@ -40,10 +39,4 @@ result = value * (rates[to_curr] / rates[from_curr])
 from_string = u"%.2f %s" % (value, from_curr)
 to_string = u"%.2f %s" % (result, to_curr)
 
-results = [alfred.Item(
-    attributes={'uid': alfred.uid(0)},
-    title=to_string,
-    subtitle=from_string
-)]  # a single Alfred result
-xml = alfred.xml(results)  # compiles the XML answer
-alfred.write(xml)  # writes the XML back to Alfred
+prompt(title=to_string, subtitle=from_string)
