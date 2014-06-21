@@ -12,6 +12,7 @@ try:
     import settings
 except ImportError:
     prompt(title="no settings.py file found", subtitle="Did you follow the installation instructions?")
+    exit()
 
 try:
     (value, from_curr, to, to_curr) = alfred.args()  # proper decoding and unescaping of command line arguments
