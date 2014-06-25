@@ -40,7 +40,10 @@ if no_curr != []:
     prompt(title="No such currency: %s" % ', '.join(no_curr), subtitle='<amount> <currency> in <other currency>, i.e. 123 EUR in USD')
     exit()
 
-rates = json.loads(urllib2.urlopen('https://openexchangerates.org/api/latest.json?app_id=%s' % settings.oer_app_id).read())['rates']
+try:
+    rates = json.loads(urllib2.urlopen('https://openexchangerates.org/api/latest.json?app_id=%s' % settings.oer_app_id, timeout=5).read())['rates']
+except urllib2.URLError:
+    prompt(title="Rates source is unavailable at the moment. Please try again later.")
 
 # in free version only available base is USD, so we have to recalculate
 
