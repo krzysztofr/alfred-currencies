@@ -5,8 +5,8 @@ import urllib2
 import json
 
 
-def prompt(title="<amount> <currency> in <other currency>", subtitle="i.e. 123 EUR in USD"):
-    alfred.write(alfred.xml([alfred.Item(attributes={'uid': alfred.uid(0)}, title=title, subtitle=subtitle)]))
+def prompt(title="<amount> <currency> in <other currency>", subtitle="i.e. 123 EUR in USD", arg=None):
+    alfred.write(alfred.xml([alfred.Item(attributes={'uid': alfred.uid(0), 'arg': arg}, title=title, subtitle=subtitle)]))
 
 try:
     import settings
@@ -52,4 +52,4 @@ result = value * (rates[to_curr] / rates[from_curr])
 from_string = u"%.2f %s" % (value, from_curr)
 to_string = u"%.2f %s" % (result, to_curr)
 
-prompt(title=to_string, subtitle=from_string)
+prompt(title=to_string, subtitle=from_string, arg=to_string)

@@ -9,7 +9,16 @@
 	<key>connections</key>
 	<dict>
 		<key>0EB72246-FF90-4C0C-BD46-BCAAD3B5A651</key>
-		<array/>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>AC0E25CE-A069-4C51-A179-E5415B23FBCF</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
 	</dict>
 	<key>createdby</key>
 	<string>Krzysztof Rakowski</string>
@@ -48,12 +57,32 @@
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>AC0E25CE-A069-4C51-A179-E5415B23FBCF</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string></string>
 	<key>uidata</key>
 	<dict>
 		<key>0EB72246-FF90-4C0C-BD46-BCAAD3B5A651</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>AC0E25CE-A069-4C51-A179-E5415B23FBCF</key>
 		<dict>
 			<key>ypos</key>
 			<real>10</real>
