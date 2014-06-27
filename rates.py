@@ -35,6 +35,9 @@ if from_curr not in CURR_IDS:
 if to_curr not in CURR_IDS:
     if len(to_curr) >= 3:  # so the message isn't shown when the second currency isn't fully typed
         no_curr.append(to_curr)
+    else:
+        prompt()
+        exit()
 
 if no_curr != []:
     prompt(title="No such currency: %s" % ', '.join(no_curr), subtitle='<amount> <currency> in <other currency>, i.e. 123 EUR in USD')
